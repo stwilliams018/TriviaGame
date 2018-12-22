@@ -114,7 +114,7 @@ $(document).ready(function(){
     $("#submit").hide();
 
     $("#start").click(function(){
-        //$(this).hide();
+        $(this).hide();
         counter = setInterval(timer, 1000); 
         displayTrivia();
 
@@ -166,12 +166,8 @@ $(document).ready(function(){
 
     }
 
-    function showResults (){
-        document.getElementById("ua").innerHTML = unanswered ;
-        document.getElementById("cor").innerHTML = correct ;
-        document.getElementById("incor").innerHTML = incorrect ;
-        
-    }
+    function showResults (){}
+
 
 
 
