@@ -129,17 +129,18 @@ $(document).ready(function(){
             showResults();
             $("#timer").hide();
          clearInterval(counter);
+         $("#submit").hide();
          return;
         }
         
          $("#timer").html("Time remaining: " + "00:" + count + " secs");
          $("#start").hide();
-         $("#submit").hide();
     }
 
     function displayTrivia() {
         var output = [];
         var answers;
+        $("#submit").show();
 
         for(var i=0; i<quizQuestion.length; i++){
             answers = [];
@@ -158,7 +159,6 @@ $(document).ready(function(){
             );
         }
         document.getElementById("quiz").innerHTML = output ;
-        $("#submit").show();
    }   
 
     function hideTrivia() {
