@@ -132,6 +132,7 @@ $(document).ready(function(){
         
          $("#timer").html("Time remaining: " + "00:" + count + " secs");
          $("#start").hide();
+         showResults()
         }
     });
 
@@ -190,5 +191,9 @@ $(document).ready(function(){
             //}
         //}
         document.getElementById("fr").innerHTML = "Final Results"; 
+        document.getElementById("cor").innerHTML = "Correct:"+" "+ correct; 
+        document.getElementById("incor").innerHTML = "Incorrect:"+" "+ incorrect; 
+        document.getElementById("ua").innerHTML = "Not Answered:"+" "+ unanswered;
+         
     }
 })
