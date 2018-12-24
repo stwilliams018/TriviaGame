@@ -1,15 +1,15 @@
 
 
 var selected = 0
-var correct = "Testing"
+var correct = 0
 var incorrect = 0
-var unanswered = 0
+var unanswered = 10
 var questionNum = 0
-var count = 100
+var count = 5
 
 
 var quizQuestion = [{
-    question: "Walter White led a pretty normal life in the south-western part of the United States. All this changed after receiving a cancer diagnoses. Which state does the show take place in?",
+    question: "Walter White led a pretty normal life in the south-western part of the United States. Which state does the show take place in?",
     answers: {
         a: 'Arizona',
         b: 'New Mexico',
@@ -109,24 +109,21 @@ var quizQuestion = [{
     }
 ]
 
+var quizContainer = document.getElementById('quiz')
+
 $(document).ready(function(){
-    $("#results").hide();
     $("#submit").hide();
 
     $("#start").click(function(){
         $(this).hide();
         counter = setInterval(timer, 1000); 
         displayTrivia();
-
-        }); 
-        
-        
+ 
         function timer(){
         count--;
         if (count <= 0) {
             hideTrivia();
             alert("Times Up!!");
-            showResults();
             $("#timer").hide();
          clearInterval(counter);
          $("#submit").hide();
@@ -135,7 +132,17 @@ $(document).ready(function(){
         
          $("#timer").html("Time remaining: " + "00:" + count + " secs");
          $("#start").hide();
-    }
+        }
+    });
+
+    $("#submit").click(function(){
+        hideTrivia();
+        clearInterval(counter);
+        $("#timer").hide();
+        showResults()
+
+    });
+
 
     function displayTrivia() {
         var output = [];
@@ -166,23 +173,22 @@ $(document).ready(function(){
 
     }
 
-    function showResults (){}
+    function showResults (){
+        //var results = (quizContainer[i].querySelectorAll('.answers'));
+        //var userAnswer = '';
+        
+        //for(vari=0; i<quizQuestion.length; i++){
+          //  userAnswer = (results[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            //if(userAnswer===quizQuestion[i].answers){
+              //  correct++;
+                //unanswered--;
+            //}
+            //else if(userAnswer!= quizQuestion[i].answers){
+              //  incorrect++;
+                //unanswered--;
+            //}
+        //}
+        document.getElementById("fr").innerHTML = "Final Results"; 
+    }
 })

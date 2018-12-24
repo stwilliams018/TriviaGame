@@ -23,7 +23,7 @@ var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+generateQuiz(myQuestions, quizContainer, resultsContainer, submi qtButton);
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
