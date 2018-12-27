@@ -1,11 +1,9 @@
-
-
 var selected = 0
 var correct = 0
 var incorrect = 0
 var unanswered = 10
-var count = 5
-
+var count = 100
+var quizContainer = document.getElementById('quiz');
 
 
 var quizQuestion = [{
@@ -99,7 +97,7 @@ var quizQuestion = [{
     correctAnswer: 'c'
     },
     {
-    Question: "10: What memento from the carwash does Walt refuse to let Bogdan, the previous owner of the carwash; take?",
+    question: "10: What memento from the carwash does Walt refuse to let Bogdan, the previous owner of the carwash; take?",
     answers: {
         a: 'keys',
         b: 'Picture',
@@ -177,25 +175,28 @@ $(document).ready(function(){
     }
 
     function showResults (){
-        //var quizContainer = document.getElementById('quiz');
-        //var userAnswer = '';
+        var answerContainers = document.getElementById("quiz").querySelectorAll('.answers')
+        var userAnswer = '';
          
-       // for(vari=0; i<quizQuestion.length; i++){
-          //userAnswer = (quizContainer[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
+       for(var i=0; i<quizQuestion.length; i++)
+       {
+          userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
-         //   if(userAnswer===quizQuestion[i].answers){
-         //       correct++;
-         //       unanswered--;
-         //   }
-         //   else {
-         //     incorrect++;
-         //    unanswered--;
-        //   }
-       // }
+            if(userAnswer==quizQuestion[i].answers){
+                correct++;
+               unanswered--;
+            }
+            else {
+              incorrect++;
+             unanswered--;
+        }
+        }
         document.getElementById("fr").innerHTML = "Final Results"; 
         document.getElementById("cor").innerHTML = "Correct:"+" "+ correct; 
         document.getElementById("incor").innerHTML = "Incorrect:"+" "+ incorrect; 
         document.getElementById("ua").innerHTML = "Not Answered:"+" "+ unanswered;
+        console.log(userAnswer)
          
     }
 })
+console.log(quizContainer)
