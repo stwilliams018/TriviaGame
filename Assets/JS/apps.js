@@ -177,21 +177,21 @@ $(document).ready(function(){
     }
 
     function showResults (){
-        var quizContainer = document.getElementById('quiz');
-        var userAnswer = '';
+        //var quizContainer = document.getElementById('quiz');
+        //var userAnswer = '';
          
-        for(vari=0; i<quizQuestion.length; i++){
-          userAnswer = (quizContainer[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
+       // for(vari=0; i<quizQuestion.length; i++){
+          //userAnswer = (quizContainer[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
 
-            if(userAnswer===quizQuestion[i].answers){
-                correct++;
-                unanswered--;
-            }
-            else {
-              incorrect++;
-                unanswered--;
-            }
-        }
+         //   if(userAnswer===quizQuestion[i].answers){
+         //       correct++;
+         //       unanswered--;
+         //   }
+         //   else {
+         //     incorrect++;
+         //    unanswered--;
+        //   }
+       // }
         document.getElementById("fr").innerHTML = "Final Results"; 
         document.getElementById("cor").innerHTML = "Correct:"+" "+ correct; 
         document.getElementById("incor").innerHTML = "Incorrect:"+" "+ incorrect; 
