@@ -7,3 +7,16 @@ body{
 #quiz{
     color: white
 }
+#QuestionBlock{
+    background-color: darkgrey
+}
+#AnswerBlock{
+    text-align: center;
+    text-emphasis: bold;
+    font-size: 2.5em
+
+}
+#timer{
+    font-size: 2em;
+    color: white
+}

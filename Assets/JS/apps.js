@@ -4,7 +4,6 @@ var selected = 0
 var correct = 0
 var incorrect = 0
 var unanswered = 10
-var questionNum = 0
 var count = 5
 
 
@@ -127,12 +126,13 @@ $(document).ready(function(){
             $("#timer").hide();
          clearInterval(counter);
          $("#submit").hide();
+         showResults();
          return;
         }
         
          $("#timer").html("Time remaining: " + "00:" + count + " secs");
          $("#start").hide();
-         showResults()
+         
         }
     });
 
@@ -140,6 +140,7 @@ $(document).ready(function(){
         hideTrivia();
         clearInterval(counter);
         $("#timer").hide();
+        $("#submit").hide();
         showResults()
 
     });
@@ -175,9 +176,8 @@ $(document).ready(function(){
     }
 
     function showResults (){
-        //var results = (quizContainer[i].querySelectorAll('.answers'));
         //var userAnswer = '';
-        
+         
         //for(vari=0; i<quizQuestion.length; i++){
           //  userAnswer = (results[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
 

@@ -12,18 +12,54 @@
     
     </head>
     <body>
-        <button id="start">Start</button>
-        <div id="quiz"></div>
-        <button id="submit">Submit Answers</button>
-        <div id="results">
-            <h2 id="fr"></H2>
-            <h2 id="cor"></h2>
-            <h2 id="incor"></h2>
-            <h2 id="ua"></h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                     <br/><br/><br/><br/><br/>
+                     <br/><br/><br/><br/><br/>
+                     <br/><br/><br/><br/><br/>
+                </div>
+                <div class="col-sm-4">
+                        <div id="timer"></div> 
+                </div>          
         </div>
-        <div id="timer"></div>
-        
-
-        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div id ="SB" class="col-sm-4">
+                    <button class ="btn btn-secondary btn-lg btn-block" id="start">Start</button>
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>          
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                </div>
+                <div id ="QuestionBlock" class="col-sm-8">
+                        <div id="quiz"></div>
+                        <button class ="btn btn-secondary btn-lg btn-block" id="submit">Submit Answers</button>  
+                <div class="col-sm-2">
+                </div>
+            </div>          
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                </div>
+                <div id ="AnswerBlock" class="col-sm-6">
+                    <div id="results">
+                        <h2 id="fr"></H2>
+                        <h2 id="cor"></h2>
+                        <h2 id="incor"></h2>
+                        <h2 id="ua"></h2>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>              
+        </div>
     </body>
 </html>
