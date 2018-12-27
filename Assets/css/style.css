@@ -1,14 +1,18 @@
 body{
-    background-image: url('images/15508_breaking_bad.jpg')
+    
+    background-image: url('images/15508_breaking_bad.jpg');
+    background-size: 100em
 }
 #results{
     color: white
 }
 #quiz{
-    color: white
+    color: green
 }
 #QuestionBlock{
-    background-color: darkgrey
+    background-color: rgb(228, 224, 224);
+    color: green;
+    border: 3px solid black;
 }
 #AnswerBlock{
     text-align: center;

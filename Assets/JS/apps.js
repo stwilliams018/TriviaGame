@@ -7,8 +7,9 @@ var unanswered = 10
 var count = 5
 
 
+
 var quizQuestion = [{
-    question: "Walter White led a pretty normal life in the south-western part of the United States. Which state does the show take place in?",
+    question: "1: Walter White led a pretty normal life in the south-western part of the United States. Which state does the show take place in?",
     answers: {
         a: 'Arizona',
         b: 'New Mexico',
@@ -18,7 +19,7 @@ var quizQuestion = [{
     correctAnswer: 'b'
     },
     {
-    question: "What are the last words spoken in the series?",
+    question: "2: What are the last words spoken in the series?",
     answers: {
         a: 'And thus it ends',
         b: 'Why?',
@@ -28,7 +29,7 @@ var quizQuestion = [{
     correctAnswer: 'd'
     },
     {
-    question: "While convalescing from the shootout with the Salamanca twins, what does Hank start collecting?",
+    question: "3: While convalescing from the shootout with the Salamanca twins, what does Hank start collecting?",
     answers: {
         a: 'Fossils',
         b: 'Arrowheads',
@@ -38,7 +39,7 @@ var quizQuestion = [{
     correctAnswer: 'c'
     },
     {
-    question: " Jane is the next door neighbor of Jesse who becomes his love interest in season 2 of Breaking Bad. What is the occupation of Jane's father, who becomes the subject of a major plot line in the final episode of the season?",
+    question: "4: Jane is the next door neighbor of Jesse who becomes his love interest in season 2 of Breaking Bad. What is the occupation of Jane's father, who becomes the subject of a major plot line in the final episode of the season?",
     answers: {
         a: 'Pilot',
         b: 'Bus Driver',
@@ -48,7 +49,7 @@ var quizQuestion = [{
     correctAnswer: 'd'
     },
     {
-    question: " Walt's son, Walter Junior, has cerebral palsy. Walt's wife, Skyler, is pregnant. After learning of his grim prognosis, Walt is concerned about his family's financial future. What drug does he decide to manufacture and sell in hopes of providing for his family?",
+    question: "5:  Walt's son, Walter Junior, has cerebral palsy. Walt's wife, Skyler, is pregnant. After learning of his grim prognosis, Walt is concerned about his family's financial future. What drug does he decide to manufacture and sell in hopes of providing for his family?",
     answers: {
         a: 'Heroin',
         b: 'Crystal Meth',
@@ -58,7 +59,7 @@ var quizQuestion = [{
     correctAnswer: 'b'
     },
     {
-    question: "What country is Gus from originally?",
+    question: "6: What country is Gus from originally?",
     answers: {
         a: 'Chile',
         b: 'Argentina',
@@ -68,7 +69,7 @@ var quizQuestion = [{
     correctAnswer: 'a'
     },
     {
-    question: "Skyler concocts a story to justify being able to buy the carwash. From what casino game has Walt supposedly made all of his money?",
+    question: "7: Skyler concocts a story to justify being able to buy the carwash. From what casino game has Walt supposedly made all of his money?",
     answers: {
         a: 'Poker',
         b: 'Blackjack',
@@ -78,7 +79,7 @@ var quizQuestion = [{
     correctAnswer: 'b'
     },
     {
-    question: "After an unfortunate experience with their original distributors, who do Walt and his partner start doing business with next?",
+    question: "8: After an unfortunate experience with their original distributors, who do Walt and his partner start doing business with next?",
     answers: {
         a: 'Gus',
         b: 'Hank',
@@ -88,7 +89,7 @@ var quizQuestion = [{
     correctAnswer: 'd'
     },
     {
-    question: "Walt doesn't want to use his real name when conducting drug-related business. He decides to use a street name, or pseudonym. What scientific name does he go by?",
+    question: "9: Walt doesn't want to use his real name when conducting drug-related business. He decides to use a street name, or pseudonym. What scientific name does he go by?",
     answers: {
         a: 'Mendeleev',
         b: 'Newton',
@@ -98,7 +99,7 @@ var quizQuestion = [{
     correctAnswer: 'c'
     },
     {
-    Question: "What memento from the carwash does Walt refuse to let Bogdan, the previous owner of the carwash; take?",
+    Question: "10: What memento from the carwash does Walt refuse to let Bogdan, the previous owner of the carwash; take?",
     answers: {
         a: 'keys',
         b: 'Picture',
@@ -124,9 +125,9 @@ $(document).ready(function(){
             hideTrivia();
             alert("Times Up!!");
             $("#timer").hide();
-         clearInterval(counter);
-         $("#submit").hide();
-         showResults();
+            clearInterval(counter);
+            $("#submit").hide();
+            showResults();
          return;
         }
         
@@ -171,25 +172,26 @@ $(document).ready(function(){
    }   
 
     function hideTrivia() {
-        $("#quiz").hide();
+        $("#QuestionBlock").hide();
 
     }
 
     function showResults (){
-        //var userAnswer = '';
+        var quizContainer = document.getElementById('quiz');
+        var userAnswer = '';
          
-        //for(vari=0; i<quizQuestion.length; i++){
-          //  userAnswer = (results[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
+        for(vari=0; i<quizQuestion.length; i++){
+          userAnswer = (quizContainer[i].querySelectorAll('input[name=question'+i+']:checked')||{}).value;
 
-            //if(userAnswer===quizQuestion[i].answers){
-              //  correct++;
-                //unanswered--;
-            //}
-            //else if(userAnswer!= quizQuestion[i].answers){
-              //  incorrect++;
-                //unanswered--;
-            //}
-        //}
+            if(userAnswer===quizQuestion[i].answers){
+                correct++;
+                unanswered--;
+            }
+            else {
+              incorrect++;
+                unanswered--;
+            }
+        }
         document.getElementById("fr").innerHTML = "Final Results"; 
         document.getElementById("cor").innerHTML = "Correct:"+" "+ correct; 
         document.getElementById("incor").innerHTML = "Incorrect:"+" "+ incorrect; 
