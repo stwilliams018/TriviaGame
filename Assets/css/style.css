@@ -7,7 +7,9 @@ body{
     color: white
 }
 #quiz{
-    color: green
+    color: green;
+    text-emphasis: bold;
+    font-size: 1.25em;
 }
 #QuestionBlock{
     background-color: rgb(228, 224, 224);
