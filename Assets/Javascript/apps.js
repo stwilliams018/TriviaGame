@@ -1,7 +1,7 @@
 var selected = 0
 var correct = 0
 var incorrect = 0
-var unanswered = 10
+var unanswered = 0
 var count = 100
 var quizContainer = document.getElementById('quiz');
 
@@ -104,6 +104,7 @@ var quizQuestion = [{
         c: 'Dollar Bill',
         d: 'Vacum Cleaner'
     },
+    correctAnswer: 'c'
     }
 ]
 
@@ -182,14 +183,15 @@ $(document).ready(function(){
        {
           userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
-            if(userAnswer==quizQuestion[i].answers){
+            if(userAnswer==quizQuestion[i].correctAnswer){
                 correct++;
-               unanswered--;
+            }
+            else if (userAnswer == null){
+             unanswered++;
             }
             else {
-              incorrect++;
-             unanswered--;
-        }
+                incorrect++
+            }
         }
         document.getElementById("fr").innerHTML = "Final Results"; 
         document.getElementById("cor").innerHTML = "Correct:"+" "+ correct; 
