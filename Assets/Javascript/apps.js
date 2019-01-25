@@ -3,7 +3,7 @@ var correct = 0
 var incorrect = 0
 var unanswered = 0
 var count = 100
-var quizContainer = document.getElementById('quiz');
+
 
 
 var quizQuestion = [{
@@ -105,11 +105,7 @@ var quizQuestion = [{
         d: 'Vacum Cleaner'
     },
     correctAnswer: 'c'
-    }
-]
-
-var quizContainer = document.getElementById('quiz')
-
+    }]
 $(document).ready(function(){
     $("#submit").hide();
 
@@ -176,12 +172,12 @@ $(document).ready(function(){
     }
 
     function showResults (){
-        var answerContainers = document.getElementById("quiz").querySelectorAll('.answers')
+        var answerChoices = document.getElementById("quiz").querySelectorAll('.answers')
         var userAnswer = '';
          
        for(var i=0; i<quizQuestion.length; i++)
        {
-          userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+          userAnswer = (answerChoices[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
             if(userAnswer==quizQuestion[i].correctAnswer){
                 correct++;
@@ -194,11 +190,10 @@ $(document).ready(function(){
             }
         }
         document.getElementById("fr").innerHTML = "Final Results"; 
-        document.getElementById("cor").innerHTML = "Correct:"+" "+ correct; 
-        document.getElementById("incor").innerHTML = "Incorrect:"+" "+ incorrect; 
-        document.getElementById("ua").innerHTML = "Not Answered:"+" "+ unanswered;
+        document.getElementById("cor").innerHTML = "Correct: "+ correct; 
+        document.getElementById("incor").innerHTML = "Incorrect: "+ incorrect; 
+        document.getElementById("ua").innerHTML = "Not Answered: "+ unanswered;
         console.log(userAnswer)
          
     }
 })
-console.log(quizContainer)
